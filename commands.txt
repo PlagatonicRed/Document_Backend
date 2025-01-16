@@ -1,0 +1,12 @@
+docker build -f Dockerfile.users -t project3:1.0 .
+docker run -d -p 9000:5000 --name=user-micro -e PYTHONUNBUFFERED=1 --network=lampleyi project3:1.0
+
+docker build -f Dockerfile.docs -t project3:1.0 .
+docker run -d -p 9001:5000 --name=docs-micro -e PYTHONUNBUFFERED=1 --network=lampleyi project3:1.0
+
+docker build -f Dockerfile.search -t project3:1.0 .
+docker run -d -p 9002:5000 --name=searcher-micro -e PYTHONUNBUFFERED=1 --network=lampleyi project3:1.0
+
+docker build -f Dockerfile.logs -t project3:1.0 .
+docker run -d -p 9003:5000 --name=logs-micro -e PYTHONUNBUFFERED=1 --network=lampleyi project3:1.0
+

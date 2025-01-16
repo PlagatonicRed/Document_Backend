@@ -1,0 +1,16 @@
+
+
+CREATE TABLE IF NOT EXISTS docs (
+filename TEXT PRIMARY KEY,
+owner TEXT NOT NULL,
+body TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS doc_groups
+(
+filename TEXT,
+doc_group TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS docs;
+DROP TABLE IF EXISTS doc_groups;
